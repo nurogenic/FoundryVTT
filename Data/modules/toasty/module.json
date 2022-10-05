@@ -4,13 +4,10 @@
     "description": "A simple module created to display the Toasty guy on crit fails.",
     "version": "0.0.1",
     "author": "IDWFD",
-    "scripts": ["index.js"],
-    "systems": [
-        "dnd5e"
+    "scripts": [
+      "scripts/index.js"
     ],
-    "minimumCoreVersion": "0.8.5",
-    "compatibleCoreVersion": "0.8.6",
-    "allowBugReporter": true,
+    "minimumCoreVersion": "0.5.0",
     "url": "https://github.com/nurogenic/FoundryVTT",
     "manifest": "https://github.com/nurogenic/FoundryVTT/releases/download/0.0.1/module.json",
     "download": "https://github.com/nurogenic/FoundryVTT/releases/download/0.0.1/module.zip"
