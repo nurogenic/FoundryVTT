@@ -2,7 +2,7 @@
     "id": "toasty",
     "title": "Toasty - IDWFD",
     "description": "A simple module created to display the Toasty guy on crit fails.",
-    "version": "0.0.3",
+    "version": "0.0.1",
     "minimumCoreVersion" : "9",
     "compatibleCoreVersion" : 10,
     "compatibility": {
@@ -14,6 +14,6 @@
       "./scripts/main.js"
     ],
     "url": "https://github.com/nurogenic/FoundryVTT",
-    "manifest": "https://github.com/nurogenic/FoundryVTT/releases/download/0.0.2/module.json",
-    "download": "https://github.com/nurogenic/FoundryVTT/releases/download/0.0.2/module.zip"
+    "manifest": "https://github.com/nurogenic/FoundryVTT/releases/download/0.0.1/module.json",
+    "download": "https://github.com/nurogenic/FoundryVTT/releases/download/0.0.1/module.zip"
   }
