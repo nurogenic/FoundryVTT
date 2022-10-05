@@ -6,7 +6,7 @@
     "minimumCoreVersion": "0.6.0",
     "compatibleCoreVersion": "0.6.4",  
     "authors": [ { "name": "IDWFD" } ],
-    "esmodules": [
+    "scripts": [
       "./scripts/main.js"
     ],
     "url": "https://github.com/nurogenic/FoundryVTT",
