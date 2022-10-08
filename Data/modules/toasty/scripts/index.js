@@ -1,176 +1,186 @@
-/**
- * Registers the exposed settings for the various 3D dice options.
- */
-Hooks.once('init', () => {
-    const debouncedReload = foundry.utils.debounce(() => {
-        window.location.reload();
-    }, 100);
-    game.settings.registerMenu("dice-so-nice", "dice-so-nice", {
-        name: "DICESONICE.config",
-        label: "DICESONICE.configTitle",
-        hint: "DICESONICE.configHint",
-        icon: "fas fa-dice-d20",
-        type: DiceConfig,
-        restricted: false
-    });
+console.log("Hello World! This code runs immediately when the file is loaded.");
 
-    game.settings.registerMenu("dice-so-nice", "rollable-area", {
-        name: "DICESONICE.RollableAreaConfig",
-        label: "DICESONICE.RollableAreaConfigTitle",
-        hint: "DICESONICE.RollableAreaConfigHint",
-        icon: "fas fa-crop-alt",
-        type: RollableAreaConfig,
-        restricted: false
-    });
-
-    //Not used anymore but kept for compatibility with migration
-    game.settings.register("dice-so-nice", "settings", {
-        name: "3D Dice Settings",
-        scope: "client",
-        default: {},
-        type: Object,
-        config: false
-    });
-
-    game.settings.register("dice-so-nice", "maxDiceNumber", {
-        name: "DICESONICE.maxDiceNumber",
-        hint: "DICESONICE.maxDiceNumberHint",
-        scope: "world",
-        type: Number,
-        default: 20,
-        range: {
-            min: 20,
-            max: 100,
-            step: 5
-        },
-        config: true
-    });
-
-    game.settings.register("dice-so-nice", "globalAnimationSpeed", {
-        name: "DICESONICE.globalAnimationSpeed",
-        hint: "DICESONICE.globalAnimationSpeedHint",
-        scope: "world",
-        type: String,
-        choices: Utils.localize({
-            "0": "DICESONICE.PlayerSpeed",
-            "1": "DICESONICE.NormalSpeed",
-            "2": "DICESONICE.2xSpeed",
-            "3": "DICESONICE.3xSpeed"
-        }),
-        default: "0",
-        config: true,
-        onChange: debouncedReload
-    });
-
-    game.settings.register("dice-so-nice", "enabledSimultaneousRolls", {
-        name: "DICESONICE.enabledSimultaneousRolls",
-        hint: "DICESONICE.enabledSimultaneousRollsHint",
-        scope: "world",
-        type: Boolean,
-        default: true,
-        config: true,
-        onChange: debouncedReload
-    });
-
-    game.settings.register("dice-so-nice", "enabledSimultaneousRollForMessage", {
-        name: "DICESONICE.enabledSimultaneousRollForMessage",
-        hint: "DICESONICE.enabledSimultaneousRollForMessageHint",
-        scope: "world",
-        type: Boolean,
-        default: true,
-        config: true
-    });
-
-    game.settings.register("dice-so-nice", "diceCanBeFlipped", {
-        name: "DICESONICE.diceCanBeFlipped",
-        hint: "DICESONICE.diceCanBeFlippedHint",
-        scope: "world",
-        type: Boolean,
-        default: true,
-        config: true
-    });
-
-    game.settings.register("dice-so-nice", "formatVersion", {
-        scope: "world",
-        type: String,
-        default: "",
-        config: false
-    });
-
-    game.settings.register("dice-so-nice", "disabledDuringCombat", {
-        name: "DICESONICE.disabledDuringCombat",
-        hint: "DICESONICE.disabledDuringCombatHint",
-        scope: "world",
-        type: Boolean,
-        default: false,
-        config: true
-    });
-
-    game.settings.register("dice-so-nice", "disabledForInitiative", {
-        name: "DICESONICE.disabledForInitiative",
-        hint: "DICESONICE.disabledForInitiativeHint",
-        scope: "world",
-        type: Boolean,
-        default: false,
-        config: true
-    });
-
-    game.settings.register("dice-so-nice", "immediatelyDisplayChatMessages", {
-        name: "DICESONICE.immediatelyDisplayChatMessages",
-        hint: "DICESONICE.immediatelyDisplayChatMessagesHint",
-        scope: "world",
-        type: Boolean,
-        default: false,
-        config: true
-    });
-
-    game.settings.register("dice-so-nice", "animateRollTable", {
-        name: "DICESONICE.animateRollTable",
-        hint: "DICESONICE.animateRollTableHint",
-        scope: "world",
-        type: Boolean,
-        default: false,
-        config: true
-    });
-
-    game.settings.register("dice-so-nice", "animateInlineRoll", {
-        name: "DICESONICE.animateInlineRoll",
-        hint: "DICESONICE.animateInlineRollHint",
-        scope: "world",
-        type: Boolean,
-        default: true,
-        config: true
-    });
-
-    game.settings.register("dice-so-nice", "hideNpcRolls", {
-        name: "DICESONICE.hideNpcRolls",
-        hint: "DICESONICE.hideNpcRollsHint",
-        scope: "world",
-        type: Boolean,
-        default: false,
-        config: true
-    });
-
-    game.settings.register("dice-so-nice", "allowInteractivity", {
-        name: "DICESONICE.allowInteractivity",
-        hint: "DICESONICE.allowInteractivityHint",
-        scope: "world",
-        type: Boolean,
-        default: true,
-        config: true,
-        onChange: debouncedReload
-    });
-
-    game.settings.register("dice-so-nice", "showGhostDice", {
-        name: "DICESONICE.showGhostDice",
-        hint: "DICESONICE.showGhostDiceHint",
-        scope: "world",
-        type: Boolean,
-        default: false,
-        config: true
-    });
-
+Hooks.on("init", function() {
+  console.log("This code runs once the Foundry VTT software begins it's initialization workflow.");
 });
+
+Hooks.on("ready", function() {
+  console.log("This code runs once core initialization is ready and game data is available.");
+});
+
+// /**
+//  * Registers the exposed settings for the various 3D dice options.
+//  */
+// Hooks.once('init', () => {
+//     const debouncedReload = foundry.utils.debounce(() => {
+//         window.location.reload();
+//     }, 100);
+//     game.settings.registerMenu("dice-so-nice", "dice-so-nice", {
+//         name: "DICESONICE.config",
+//         label: "DICESONICE.configTitle",
+//         hint: "DICESONICE.configHint",
+//         icon: "fas fa-dice-d20",
+//         type: DiceConfig,
+//         restricted: false
+//     });
+
+//     game.settings.registerMenu("dice-so-nice", "rollable-area", {
+//         name: "DICESONICE.RollableAreaConfig",
+//         label: "DICESONICE.RollableAreaConfigTitle",
+//         hint: "DICESONICE.RollableAreaConfigHint",
+//         icon: "fas fa-crop-alt",
+//         type: RollableAreaConfig,
+//         restricted: false
+//     });
+
+//     //Not used anymore but kept for compatibility with migration
+//     game.settings.register("dice-so-nice", "settings", {
+//         name: "3D Dice Settings",
+//         scope: "client",
+//         default: {},
+//         type: Object,
+//         config: false
+//     });
+
+//     game.settings.register("dice-so-nice", "maxDiceNumber", {
+//         name: "DICESONICE.maxDiceNumber",
+//         hint: "DICESONICE.maxDiceNumberHint",
+//         scope: "world",
+//         type: Number,
+//         default: 20,
+//         range: {
+//             min: 20,
+//             max: 100,
+//             step: 5
+//         },
+//         config: true
+//     });
+
+//     game.settings.register("dice-so-nice", "globalAnimationSpeed", {
+//         name: "DICESONICE.globalAnimationSpeed",
+//         hint: "DICESONICE.globalAnimationSpeedHint",
+//         scope: "world",
+//         type: String,
+//         choices: Utils.localize({
+//             "0": "DICESONICE.PlayerSpeed",
+//             "1": "DICESONICE.NormalSpeed",
+//             "2": "DICESONICE.2xSpeed",
+//             "3": "DICESONICE.3xSpeed"
+//         }),
+//         default: "0",
+//         config: true,
+//         onChange: debouncedReload
+//     });
+
+//     game.settings.register("dice-so-nice", "enabledSimultaneousRolls", {
+//         name: "DICESONICE.enabledSimultaneousRolls",
+//         hint: "DICESONICE.enabledSimultaneousRollsHint",
+//         scope: "world",
+//         type: Boolean,
+//         default: true,
+//         config: true,
+//         onChange: debouncedReload
+//     });
+
+//     game.settings.register("dice-so-nice", "enabledSimultaneousRollForMessage", {
+//         name: "DICESONICE.enabledSimultaneousRollForMessage",
+//         hint: "DICESONICE.enabledSimultaneousRollForMessageHint",
+//         scope: "world",
+//         type: Boolean,
+//         default: true,
+//         config: true
+//     });
+
+//     game.settings.register("dice-so-nice", "diceCanBeFlipped", {
+//         name: "DICESONICE.diceCanBeFlipped",
+//         hint: "DICESONICE.diceCanBeFlippedHint",
+//         scope: "world",
+//         type: Boolean,
+//         default: true,
+//         config: true
+//     });
+
+//     game.settings.register("dice-so-nice", "formatVersion", {
+//         scope: "world",
+//         type: String,
+//         default: "",
+//         config: false
+//     });
+
+//     game.settings.register("dice-so-nice", "disabledDuringCombat", {
+//         name: "DICESONICE.disabledDuringCombat",
+//         hint: "DICESONICE.disabledDuringCombatHint",
+//         scope: "world",
+//         type: Boolean,
+//         default: false,
+//         config: true
+//     });
+
+//     game.settings.register("dice-so-nice", "disabledForInitiative", {
+//         name: "DICESONICE.disabledForInitiative",
+//         hint: "DICESONICE.disabledForInitiativeHint",
+//         scope: "world",
+//         type: Boolean,
+//         default: false,
+//         config: true
+//     });
+
+//     game.settings.register("dice-so-nice", "immediatelyDisplayChatMessages", {
+//         name: "DICESONICE.immediatelyDisplayChatMessages",
+//         hint: "DICESONICE.immediatelyDisplayChatMessagesHint",
+//         scope: "world",
+//         type: Boolean,
+//         default: false,
+//         config: true
+//     });
+
+//     game.settings.register("dice-so-nice", "animateRollTable", {
+//         name: "DICESONICE.animateRollTable",
+//         hint: "DICESONICE.animateRollTableHint",
+//         scope: "world",
+//         type: Boolean,
+//         default: false,
+//         config: true
+//     });
+
+//     game.settings.register("dice-so-nice", "animateInlineRoll", {
+//         name: "DICESONICE.animateInlineRoll",
+//         hint: "DICESONICE.animateInlineRollHint",
+//         scope: "world",
+//         type: Boolean,
+//         default: true,
+//         config: true
+//     });
+
+//     game.settings.register("dice-so-nice", "hideNpcRolls", {
+//         name: "DICESONICE.hideNpcRolls",
+//         hint: "DICESONICE.hideNpcRollsHint",
+//         scope: "world",
+//         type: Boolean,
+//         default: false,
+//         config: true
+//     });
+
+//     game.settings.register("dice-so-nice", "allowInteractivity", {
+//         name: "DICESONICE.allowInteractivity",
+//         hint: "DICESONICE.allowInteractivityHint",
+//         scope: "world",
+//         type: Boolean,
+//         default: true,
+//         config: true,
+//         onChange: debouncedReload
+//     });
+
+//     game.settings.register("dice-so-nice", "showGhostDice", {
+//         name: "DICESONICE.showGhostDice",
+//         hint: "DICESONICE.showGhostDiceHint",
+//         scope: "world",
+//         type: Boolean,
+//         default: false,
+//         config: true
+//     });
+
+// });
 
 /**
  * Intercepts all roll-type messages hiding the content until the animation is finished
