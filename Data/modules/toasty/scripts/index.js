@@ -1,4 +1,4 @@
-const isReady = false;
+var isReady = false;
 const image = document.createElement('img');
 image.src = "/modules/toasty/artwork/toasty.png";
 image.classList.add('toasty-image-default');
@@ -19,7 +19,7 @@ function TOASTY() {
     Hooks.off('diceSoNiceRollComplete', TOASTY);
 }
 
-Hooks.on("ready", () => isReady = 1);
+Hooks.on("ready", () => isReady = true);
 
 /**
  * Hide messages which are animating rolls.

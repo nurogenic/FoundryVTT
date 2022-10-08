@@ -3,7 +3,7 @@
     "id": "toasty",
     "title": "Toasty",
     "description": "A simple module module to render toasty on crit fail.",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "author": "The Tester",
     "scripts": [
       "scripts/index.js"
@@ -13,6 +13,6 @@
     ],
     "minimumCoreVersion": "9",
     "url": "https://github.com/nurogenic/FoundryVTT",
-    "manifest": "https://github.com/nurogenic/FoundryVTT/releases/download/0.0.5/module.json",
-    "download": "https://github.com/nurogenic/FoundryVTT/releases/download/0.0.5/module.zip"
+    "manifest": "https://github.com/nurogenic/FoundryVTT/releases/download/0.0.6/module.json",
+    "download": "https://github.com/nurogenic/FoundryVTT/releases/download/0.0.6/module.zip"
 }
