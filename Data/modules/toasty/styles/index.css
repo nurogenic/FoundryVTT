@@ -1,0 +1,10 @@
+img.toasty-image-default {
+    position: fixed;
+    transform: scale(-1,1) translate(100%, 0);
+    bottom: 0;
+    transition: all ease 0.3s;
+}
+
+img.toasty-image-default.active {
+    transform: scale(-1,1) translate(0, 0);
+}
